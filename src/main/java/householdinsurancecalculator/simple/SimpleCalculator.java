@@ -13,7 +13,7 @@ public class SimpleCalculator {
     /**
      * Instance of the Calculator.
      */
-    private final static SimpleCalculator instance = new SimpleCalculator();
+    private static final SimpleCalculator instance = new SimpleCalculator();
     
     // private constructor to prohibit instantiation
     private SimpleCalculator() {}

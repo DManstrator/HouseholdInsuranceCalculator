@@ -3,7 +3,7 @@ package householdinsurancecalculator;
 import org.junit.Test;
 
 /**
- * Tests checking the functionality of the OrderBuilder and the Order itself.
+ * Main tests checking the functionality of the program.
  * @author DManstrator
  *
  */
