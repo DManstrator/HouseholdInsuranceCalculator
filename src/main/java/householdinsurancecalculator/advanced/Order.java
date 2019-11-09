@@ -1,7 +1,7 @@
 package householdinsurancecalculator.advanced;
 
 /**
- * Represents an Order of or company.
+ * Represents an Order of our company.
  * @author DManstrator
  *
  */
