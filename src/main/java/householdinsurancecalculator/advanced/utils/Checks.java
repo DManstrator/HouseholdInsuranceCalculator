@@ -40,7 +40,7 @@ public class Checks {
      * @param field The field which may not be empty
      * @throws IllegalArgumentException if the given string is empty
      */
-    public static void isEmpty(final String value, final String field)  {
+    public static void notEmpty(final String value, final String field)  {
         if (value.trim().isEmpty())  {
             throw new IllegalArgumentException(field + " may not be empty!");
         }

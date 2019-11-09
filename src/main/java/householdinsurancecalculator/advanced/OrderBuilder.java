@@ -62,7 +62,7 @@ public class OrderBuilder {
     public OrderBuilder setInsuranceProduct(final String insuranceProductName, final boolean ignoreCase)  {
         String field = "Insurance product name";
         Checks.notNull(insuranceProductName, field);
-        Checks.isEmpty(insuranceProductName, field);
+        Checks.notEmpty(insuranceProductName, field);
         
         this.insuranceProduct = InsuranceProduct.getInsuranceProductByName(insuranceProductName, ignoreCase);
         return this;
