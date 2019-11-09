@@ -33,9 +33,9 @@ public class OrderTest extends Tests {
     }
     
     @Override
-    public void testValidLowercaseInsuranceProductNameWithThirtyfiveSquareMeter() {
-        Order order = new OrderBuilder().setInsuranceProduct("kompakt", true).setLivingSpace(35).build();
-        Assert.assertEquals(22_750, order.getInsuranceSum());
+    public void testValidLowercaseInsuranceProductNameWithThirtySquareMeter() {
+        Order order = new OrderBuilder().setInsuranceProduct("kompakt", true).setLivingSpace(30).build();
+        Assert.assertEquals(19_500, order.getInsuranceSum());
     }
 
     @Override
@@ -45,25 +45,23 @@ public class OrderTest extends Tests {
     
     @Override
     public void testInvalidInsuranceProductNameWithThirtyFiveSquareMeter() {
-        new OrderBuilder().setInsuranceProduct("Invalid Name").setLivingSpace(30).build();
+        new OrderBuilder().setInsuranceProduct("Invalid Name").setLivingSpace(35).build();
     }
     
     @Override
     public void testNullProductNameWithZeroSquareMeter() {
         String name = null;  // else type is ambiguous
-        new OrderBuilder().setInsuranceProduct(name).setLivingSpace(30).build();
+        new OrderBuilder().setInsuranceProduct(name).setLivingSpace(0).build();
     }
     
     @Override
     public void testEmptyProductNameWithFiveSquareMeter() {
-        new OrderBuilder().setInsuranceProduct("   ").setLivingSpace(30).build();
+        new OrderBuilder().setInsuranceProduct("   ").setLivingSpace(5).build();
     }
 
     @Override
     public void testCompactProductWithNegativeSquareMeter() {
         new OrderBuilder().setInsuranceProduct(InsuranceProduct.COMPACT).setLivingSpace(-5).build();
     }
-
-
 
 }

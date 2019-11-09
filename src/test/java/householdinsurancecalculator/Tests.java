@@ -31,11 +31,11 @@ public abstract class Tests {
     abstract public void testValidInsuranceProductNameWithTenSquareMeter();
     
     /**
-     * Tests a compact insurance product name in lowercase with 35 square meters by its name.
-     * Result should be 650 Euros * 35 square meters = 22,750 euros.
+     * Tests a compact insurance product name in lowercase with 30 square meters by its name.
+     * Result should be 650 Euros * 30 square meters = 19,500 euros.
      */
     @Test
-    abstract public void testValidLowercaseInsuranceProductNameWithThirtyfiveSquareMeter();
+    abstract public void testValidLowercaseInsuranceProductNameWithThirtySquareMeter();
     
     /**
      * Tests if an {@link IllegalArgumentException} is thrown if no insurance product was passed.

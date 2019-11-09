@@ -37,9 +37,9 @@ public class SimpleCalculatorTest extends Tests {
     }
     
     @Override
-    public void testValidLowercaseInsuranceProductNameWithThirtyfiveSquareMeter() {
-        int insuranceSum = calculator.getInsuranceSum("kompakt", true, 35);
-        Assert.assertEquals(22_750, insuranceSum);
+    public void testValidLowercaseInsuranceProductNameWithThirtySquareMeter() {
+        int insuranceSum = calculator.getInsuranceSum("kompakt", true, 30);
+        Assert.assertEquals(19_500, insuranceSum);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class SimpleCalculatorTest extends Tests {
     
     @Override
     public void testInvalidInsuranceProductNameWithThirtyFiveSquareMeter() {
-        calculator.getInsuranceSum("Invalid Name", 25);
+        calculator.getInsuranceSum("Invalid Name", 35);
     }
 
     @Override
@@ -61,14 +61,12 @@ public class SimpleCalculatorTest extends Tests {
     
     @Override
     public void testEmptyProductNameWithFiveSquareMeter() {
-        calculator.getInsuranceSum("   ", 25);
+        calculator.getInsuranceSum("   ", 5);
     }
     
     @Override
     public void testCompactProductWithNegativeSquareMeter() {
         calculator.getInsuranceSum(InsuranceProduct.COMPACT, -5);
     }
-
-
 
 }
