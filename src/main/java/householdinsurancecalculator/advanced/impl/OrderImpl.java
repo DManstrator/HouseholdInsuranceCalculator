@@ -21,7 +21,7 @@ public class OrderImpl implements Order {
     private final int livingSpace;
     
     /**
-     * Defines an {@link Order} used in our company.
+     * Defines the implementation for an {@link Order} used in our company.
      * @param insuranceProduct Insurance product for this order
      * @param livingSpace      Amount of square meters for this order
      */

@@ -56,7 +56,7 @@ public enum InsuranceProduct {
     /**
      * Gets an {@link InsuranceProduct} by its name. If the is not such a product, it will return <code>null</code>.
      * The comparison will be made case sensitive.
-     * @param name Name of the insurance product to find.
+     * @param  name Name of the insurance product to find.
      * @return Possibly-null {@link InsuranceProduct} having the given name.
      */
     public static InsuranceProduct getInsuranceProductByName(final String name)  {
@@ -65,8 +65,8 @@ public enum InsuranceProduct {
     
     /**
      * Gets an {@link InsuranceProduct} by its name. If the is not such a product, it will return <code>null</code>.
-     * @param name       Name of the insurance product to find.
-     * @param ignoreCase Whether the comparison is case insensitive or not 
+     * @param  name       Name of the insurance product to find.
+     * @param  ignoreCase Whether the comparison is case insensitive or not
      * @return Possibly-null {@link InsuranceProduct} having the given name.
      */
     public static InsuranceProduct getInsuranceProductByName(final String name, final boolean ignoreCase)  {

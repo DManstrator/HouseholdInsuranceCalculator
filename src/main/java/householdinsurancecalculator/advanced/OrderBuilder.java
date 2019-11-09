@@ -35,7 +35,7 @@ public class OrderBuilder {
     
     /**
      * Sets the insurance product of this order.
-     * @param insuranceProduct Insurance product of this order
+     * @param  insuranceProduct Insurance product of this order
      * @return The OrderBuilder instance with an updated insurance product. Useful for chaining.
      */
     public OrderBuilder setInsuranceProduct(final InsuranceProduct insuranceProduct)  {
@@ -46,7 +46,7 @@ public class OrderBuilder {
     /**
      * Sets the insurance product of this order given by the name of the product.
      * The search will be made case sensitive.
-     * @param insuranceProductName Name of the insurance product of this order
+     * @param  insuranceProductName Name of the insurance product of this order
      * @return The OrderBuilder instance with an updated insurance product. Useful for chaining.
      */
     public OrderBuilder setInsuranceProduct(final String insuranceProductName)  {
@@ -55,8 +55,8 @@ public class OrderBuilder {
     
     /**
      * Sets the insurance product of this order given by the name of the product.
-     * @param insuranceProductName Name of the insurance product of this order
-     * @param ignoreCase           Whether the search is case insensitive or not 
+     * @param  insuranceProductName Name of the insurance product of this order
+     * @param  ignoreCase           Whether the search is case insensitive or not
      * @return The OrderBuilder instance with an updated insurance product. Useful for chaining.
      */
     public OrderBuilder setInsuranceProduct(final String insuranceProductName, final boolean ignoreCase)  {
@@ -70,7 +70,7 @@ public class OrderBuilder {
     
     /**
      * Sets the living space of this order.
-     * @param livingSpace Amount of square meters the order is covering
+     * @param  livingSpace Amount of square meters the order is covering
      * @return The OrderBuilder instance with an updated living space. Useful for chaining.
      */
     public OrderBuilder setLivingSpace(final int livingSpace)  {
