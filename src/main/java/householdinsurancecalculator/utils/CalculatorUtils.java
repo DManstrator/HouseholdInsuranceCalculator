@@ -21,6 +21,8 @@ public class CalculatorUtils {
      *         The amount of square meters this calculation is based on
      * @throws IllegalArgumentException
      *         <ul>
+     *           <li>if the insurance product name is <code>null</code></li>
+     *           <li>if the insurance product name is empty</li>
      *           <li>if the insurance product name doesn't belong to an {@link InsuranceProduct}</li>
      *           <li>if the living space is smaller than 0</li>
      *         </ul>
@@ -41,6 +43,8 @@ public class CalculatorUtils {
      *         The amount of square meters this calculation is based on
      * @throws IllegalArgumentException
      *         <ul>
+     *           <li>if the insurance product name is <code>null</code></li>
+     *           <li>if the insurance product name is empty</li>
      *           <li>if the insurance product name doesn't belong to an {@link InsuranceProduct}</li>
      *           <li>if the living space is smaller than 0</li>
      *         </ul>
@@ -64,13 +68,15 @@ public class CalculatorUtils {
      *         The amount of square meters this calculation is based on
      * @throws IllegalArgumentException
      *         <ul>
-     *           <li>if the insurance product is null</li>
+     *           <li>if the insurance product is <code>null</code></li>
+     *           <li>if the insurance product is {@link InsuranceProduct#UNKNOWN}</li>
      *           <li>if the living space is smaller than 0</li>
      *         </ul>
      * @return The amount insured for this order
      */
     public static int getInsuranceSum(final InsuranceProduct insuranceProduct, final int livingSpace) throws IllegalArgumentException  {
         Checks.notNull(insuranceProduct, "The insurance product");
+        Checks.check(insuranceProduct != InsuranceProduct.UNKNOWN, "The given insurance product was unknown!");
         Checks.check(livingSpace >= 0, "The living space cannot be smaller than 0!");
         return insuranceProduct.getPricePerSquaremeter() * livingSpace;
     }

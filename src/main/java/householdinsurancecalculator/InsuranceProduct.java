@@ -15,7 +15,12 @@ public enum InsuranceProduct {
     /**
      * Ideal Product. Costs 700 Euros per square meter.
      */
-    IDEAL("Optimal", 700);
+    IDEAL("Optimal", 700),
+
+    /**
+     * Unknown Product for error handling.
+     */
+    UNKNOWN("Unbekannt", -1);
     
     /**
      * Readable name of the insurance product.
@@ -85,7 +90,7 @@ public enum InsuranceProduct {
             }
         }
         
-        return null;
+        return UNKNOWN;
     }
 
 }

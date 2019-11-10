@@ -44,6 +44,12 @@ public abstract class Tests {
     abstract public void testNoInsuranceProductWithTwentyFiveSquareMeter();
     
     /**
+     * Tests if an {@link IllegalArgumentException} is thrown if an unknown product was passed.
+     */
+    @Test(expected=IllegalArgumentException.class)
+    abstract public void testUnknownInsuranceProductWithTwentyFiveSquareMeter();
+
+    /**
      * Tests if an {@link IllegalArgumentException} is thrown if an invalid insurance product name was passed.
      */
     @Test(expected=IllegalArgumentException.class)

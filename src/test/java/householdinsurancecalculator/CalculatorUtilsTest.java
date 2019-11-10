@@ -41,6 +41,11 @@ public class CalculatorUtilsTest extends Tests {
         InsuranceProduct prod = null;  // else type is ambiguous
         CalculatorUtils.getInsuranceSum(prod, 25);
     }
+
+    @Override
+    public void testUnknownInsuranceProductWithTwentyFiveSquareMeter() {
+        CalculatorUtils.getInsuranceSum(InsuranceProduct.UNKNOWN, 25);
+    }
     
     @Override
     public void testInvalidInsuranceProductNameWithThirtyFiveSquareMeter() {

@@ -11,13 +11,13 @@ public class Checks {
     private Checks() {}
     
     /**
-     * Checks whether the given Object is null or not. 
+     * Checks whether the given Object is <code>null</code> or not.
      * @param  o
      *         Object to check
      * @param  field
-     *         Name of the field which may not be bull
+     *         Name of the field which may not be <code>null</code>
      * @throws IllegalArgumentException
-     *         if the given Object is null
+     *         if the given Object is <code>null</code>
      */
     public static void notNull(final Object o, final String field)  {
         if (o == null)  {
@@ -30,9 +30,9 @@ public class Checks {
      * @param  expression
      *         Expression to check
      * @param  message
-     *         Message to output if the expression isn't true
+     *         Message to output if the expression isn't <code>true</code>
      * @throws IllegalArgumentException
-     *         if the given expression isn't true
+     *         if the given expression isn't <code>true</code>
      */
     public static void check(final boolean expression, final String message) {
         if (!expression)  {

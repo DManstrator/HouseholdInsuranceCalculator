@@ -17,7 +17,7 @@ public class InsuranceProductTest {
     @Test
     public void testIllegalName() {
         InsuranceProduct insuranceProductByName = InsuranceProduct.of("Illegal Name", true);
-        Assert.assertEquals(null, insuranceProductByName);
+        Assert.assertEquals(InsuranceProduct.UNKNOWN, insuranceProductByName);
     }
     
     /**
@@ -37,7 +37,7 @@ public class InsuranceProductTest {
     @Test
     public void testCorrectNameInWrongCase() {
         InsuranceProduct insuranceProductByName = InsuranceProduct.of("kompakt");
-        Assert.assertEquals(null, insuranceProductByName);
+        Assert.assertEquals(InsuranceProduct.UNKNOWN, insuranceProductByName);
     }
     
     /**
