@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Tests checking the functionality of the InsuranceProduct.
+ * Tests checking the functionality of the {@link InsuranceProduct}.
  * @author DManstrator
  *
  */
@@ -12,7 +12,7 @@ public class InsuranceProductTest {
     
     /**
      * Tests getting an insurance product which doesn't exist at all.
-     * Result should be <code>null</code>.
+     * Result should be {@link InsuranceProduct#UNKNOWN}.
      */
     @Test
     public void testIllegalName() {
@@ -32,7 +32,7 @@ public class InsuranceProductTest {
     
     /**
      * Tests getting an insurance product searching case insensitive which exist only case sensitive.
-     * Result should be <code>null</code>.
+     * Result should be {@link InsuranceProduct#UNKNOWN}.
      */
     @Test
     public void testCorrectNameInWrongCase() {

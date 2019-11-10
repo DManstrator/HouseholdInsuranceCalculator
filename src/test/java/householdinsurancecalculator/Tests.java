@@ -38,7 +38,7 @@ public abstract class Tests {
     abstract public void testValidLowercaseInsuranceProductNameWithThirtySquareMeter();
     
     /**
-     * Tests if an {@link IllegalArgumentException} is thrown if no insurance product was passed.
+     * Tests if an {@link IllegalArgumentException} is thrown if <code>null</code> was passed as the insurance product.
      */
     @Test(expected=IllegalArgumentException.class)
     abstract public void testNoInsuranceProductWithTwentyFiveSquareMeter();

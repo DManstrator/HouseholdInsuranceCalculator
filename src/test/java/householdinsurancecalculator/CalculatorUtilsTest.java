@@ -6,7 +6,7 @@ import householdinsurancecalculator.InsuranceProduct;
 import householdinsurancecalculator.utils.CalculatorUtils;
 
 /**
- * Tests checking the functionality of the CalulatorUtils.
+ * Tests checking the functionality of the {@link CalculatorUtils}.
  * @author DManstrator
  *
  */
