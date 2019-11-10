@@ -1,4 +1,4 @@
-package householdinsurancecalculator.advanced.utils;
+package householdinsurancecalculator.utils;
 
 /**
  * Utility class checking for several things.
@@ -28,13 +28,13 @@ public class Checks {
     /**
      * Checks for a given expression. 
      * @param  expression
-               Expression to check
+     *         Expression to check
      * @param  message
      *         Message to output if the expression isn't true
      * @throws IllegalArgumentException
      *         if the given expression isn't true
      */
-    public static void isTrue(final boolean expression, final String message) {
+    public static void check(final boolean expression, final String message) {
         if (!expression)  {
             throw new IllegalArgumentException(message);
         }

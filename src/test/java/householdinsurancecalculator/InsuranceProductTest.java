@@ -3,8 +3,6 @@ package householdinsurancecalculator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import householdinsurancecalculator.advanced.InsuranceProduct;
-
 /**
  * Tests checking the functionality of the InsuranceProduct.
  * @author DManstrator
@@ -18,7 +16,7 @@ public class InsuranceProductTest {
      */
     @Test
     public void testIllegalName() {
-        InsuranceProduct insuranceProductByName = InsuranceProduct.getInsuranceProductByName("Illegal Name", true);
+        InsuranceProduct insuranceProductByName = InsuranceProduct.of("Illegal Name", true);
         Assert.assertEquals(null, insuranceProductByName);
     }
     
@@ -28,7 +26,7 @@ public class InsuranceProductTest {
      */
     @Test
     public void testCorrectName() {
-        InsuranceProduct insuranceProductByName = InsuranceProduct.getInsuranceProductByName("Kompakt");
+        InsuranceProduct insuranceProductByName = InsuranceProduct.of("Kompakt");
         Assert.assertEquals(InsuranceProduct.COMPACT, insuranceProductByName);
     }
     
@@ -38,7 +36,7 @@ public class InsuranceProductTest {
      */
     @Test
     public void testCorrectNameInWrongCase() {
-        InsuranceProduct insuranceProductByName = InsuranceProduct.getInsuranceProductByName("kompakt");
+        InsuranceProduct insuranceProductByName = InsuranceProduct.of("kompakt");
         Assert.assertEquals(null, insuranceProductByName);
     }
     
@@ -48,7 +46,7 @@ public class InsuranceProductTest {
      */
     @Test
     public void testCorrectNameLowerCase() {
-        InsuranceProduct insuranceProductByName = InsuranceProduct.getInsuranceProductByName("optimal", true);
+        InsuranceProduct insuranceProductByName = InsuranceProduct.of("optimal", true);
         Assert.assertEquals(InsuranceProduct.IDEAL, insuranceProductByName);
     }
 

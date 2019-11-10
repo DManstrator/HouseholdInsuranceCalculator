@@ -1,32 +1,19 @@
-package householdinsurancecalculator.simple;
+package householdinsurancecalculator.utils;
 
-import householdinsurancecalculator.advanced.InsuranceProduct;
+import householdinsurancecalculator.InsuranceProduct;
 
 /**
- * A very simple way of getting the amount assured without the builder pattern / own classes.
+ * A very simple way of getting the amount assured.
  * @author DManstrator
  *
  */
-public class SimpleCalculator {
-    
-    /**
-     * Instance of the Calculator.
-     */
-    private static final SimpleCalculator instance = new SimpleCalculator();
+public class CalculatorUtils {
     
     // private constructor to prohibit instantiation
-    private SimpleCalculator() {}
+    private CalculatorUtils() {}
     
     /**
-     * Gets the Calculator instance.
-     * @return the {@link SimpleCalculator} instance
-     */
-    public static SimpleCalculator getInstance()  {
-        return instance;
-    }
-    
-    /**
-     * Calculates the amount insured for this order. The search will be case sensitive.
+     * Calculates the amount insured for this order. The search after the name will be case sensitive.
      * The price is determined as <code>price per square meter * amount of square meters</code>.
      * @param  insuranceProductName
      *         Name of the insurance product this calculation is based on
@@ -39,7 +26,7 @@ public class SimpleCalculator {
      *         </ul>
      * @return The amount insured for this order
      */
-    public int getInsuranceSum(final String insuranceProductName, final int livingSpace) throws IllegalArgumentException  {
+    public static int getInsuranceSum(final String insuranceProductName, final int livingSpace) throws IllegalArgumentException  {
         return getInsuranceSum(insuranceProductName, false, livingSpace);
     }
     
@@ -59,12 +46,13 @@ public class SimpleCalculator {
      *         </ul>
      * @return The amount insured for this order
      */
-    public int getInsuranceSum(final String insuranceProductName, final boolean ignoreCase, final int livingSpace)
+    public static int getInsuranceSum(final String insuranceProductName, final boolean ignoreCase, final int livingSpace)
             throws IllegalArgumentException  {
-        if (insuranceProductName == null)  {
-            throw new IllegalArgumentException("The insurance product name may not be null!");
-        }
-        return getInsuranceSum(InsuranceProduct.getInsuranceProductByName(insuranceProductName, ignoreCase), livingSpace);
+        String field = "The insurance product name";
+        
+        Checks.notNull(insuranceProductName, field);
+        Checks.notEmpty(insuranceProductName, field);
+        return getInsuranceSum(InsuranceProduct.of(insuranceProductName, ignoreCase), livingSpace);
     }
     
     /**
@@ -81,13 +69,9 @@ public class SimpleCalculator {
      *         </ul>
      * @return The amount insured for this order
      */
-    public int getInsuranceSum(final InsuranceProduct insuranceProduct, final int livingSpace) throws IllegalArgumentException  {
-        if (insuranceProduct == null)  {
-            throw new IllegalArgumentException("The insurance product may not be null!");
-        }
-        if (livingSpace < 0)  {
-            throw new IllegalArgumentException("The living space cannot be smaller than 0!");
-        }
+    public static int getInsuranceSum(final InsuranceProduct insuranceProduct, final int livingSpace) throws IllegalArgumentException  {
+        Checks.notNull(insuranceProduct, "The insurance product");
+        Checks.check(livingSpace >= 0, "The living space cannot be smaller than 0!");
         return insuranceProduct.getPricePerSquaremeter() * livingSpace;
     }
 

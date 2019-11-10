@@ -3,4 +3,4 @@
  * @author DManstrator
  *
  */
-package householdinsurancecalculator.advanced.utils;
+package householdinsurancecalculator.utils;

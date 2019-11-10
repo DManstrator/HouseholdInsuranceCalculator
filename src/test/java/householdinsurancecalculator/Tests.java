@@ -3,7 +3,7 @@ package householdinsurancecalculator;
 import org.junit.Test;
 
 /**
- * Main tests checking the functionality of the program.
+ * Abstract class defining all Tests verifying the functionality of the program.
  * @author DManstrator
  *
  */

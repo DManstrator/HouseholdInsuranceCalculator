@@ -1,4 +1,4 @@
-package householdinsurancecalculator.advanced;
+package householdinsurancecalculator;
 
 /**
  * Enumeration representing the insurance products we sell.
@@ -55,12 +55,12 @@ public enum InsuranceProduct {
     
     /**
      * Gets an {@link InsuranceProduct} by its name. If the is not such a product, it will return <code>null</code>.
-     * The comparison will be made case sensitive.
+     * The name comparison will be made case sensitive.
      * @param  name Name of the insurance product to find.
      * @return Possibly-null {@link InsuranceProduct} having the given name.
      */
-    public static InsuranceProduct getInsuranceProductByName(final String name)  {
-        return getInsuranceProductByName(name, false);
+    public static InsuranceProduct of(final String name)  {
+        return of(name, false);
     }
     
     /**
@@ -69,7 +69,7 @@ public enum InsuranceProduct {
      * @param  ignoreCase Whether the comparison is case insensitive or not
      * @return Possibly-null {@link InsuranceProduct} having the given name.
      */
-    public static InsuranceProduct getInsuranceProductByName(final String name, final boolean ignoreCase)  {
+    public static InsuranceProduct of(final String name, final boolean ignoreCase)  {
         for (InsuranceProduct p : values())  {
             String productName = p.getProductName();
             
