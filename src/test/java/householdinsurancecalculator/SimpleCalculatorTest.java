@@ -5,12 +5,15 @@ import org.junit.Assert;
 import householdinsurancecalculator.InsuranceProduct;
 
 /**
- * Tests checking the functionality of the {@link calculator}.
+ * Tests checking the functionality of the {@link SimpleCalculator}.
  * @author DManstrator
  *
  */
 public class SimpleCalculatorTest extends Tests {
     
+    /**
+     * Instance of the calculator.
+     */
     SimpleCalculator calculator = SimpleCalculator.getInstance();
     
     @Override

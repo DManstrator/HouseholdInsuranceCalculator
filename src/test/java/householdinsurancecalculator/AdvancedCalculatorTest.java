@@ -2,8 +2,16 @@ package householdinsurancecalculator;
 
 import org.junit.Assert;
 
+/**
+ * Tests checking the functionality of the {@link SimpleCalculator}.
+ * @author DManstrator
+ *
+ */
 public class AdvancedCalculatorTest extends Tests {
 
+    /**
+     * Instance of the calculator.
+     */
     AdvancedCalculator calculator = AdvancedCalculator.getInstance();
     
     @Override
