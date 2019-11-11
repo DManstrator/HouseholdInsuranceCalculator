@@ -1,16 +1,30 @@
-package householdinsurancecalculator.utils;
+package householdinsurancecalculator;
 
 import householdinsurancecalculator.InsuranceProduct;
+import householdinsurancecalculator.utils.Checks;
 
 /**
  * A very simple way of getting the amount assured.
  * @author DManstrator
  *
  */
-public class CalculatorUtils {
+public class SimpleCalculator {
     
-    // private constructor to prohibit instantiation
-    private CalculatorUtils() {}
+    /**
+     * Instance of the Calculator.
+     */
+    private static final SimpleCalculator instance = new SimpleCalculator();
+    
+    // protected constructor to prohibit instantiation
+    protected SimpleCalculator() {}
+    
+    /**
+     * Gets the Calculator instance.
+     * @return the {@link SimpleCalculator} instance
+     */
+    public static SimpleCalculator getInstance()  {
+        return instance;
+    }
     
     /**
      * Calculates the amount insured for this order. The search after the name will be case sensitive.
@@ -28,7 +42,7 @@ public class CalculatorUtils {
      *         </ul>
      * @return The amount insured for this order
      */
-    public static int getInsuranceSum(final String insuranceProductName, final int livingSpace) throws IllegalArgumentException  {
+    public double getInsuranceSum(final String insuranceProductName, final int livingSpace) throws IllegalArgumentException  {
         return getInsuranceSum(insuranceProductName, false, livingSpace);
     }
     
@@ -50,7 +64,7 @@ public class CalculatorUtils {
      *         </ul>
      * @return The amount insured for this order
      */
-    public static int getInsuranceSum(final String insuranceProductName, final boolean ignoreCase, final int livingSpace)
+    public double getInsuranceSum(final String insuranceProductName, final boolean ignoreCase, final int livingSpace)
             throws IllegalArgumentException  {
         String field = "The insurance product name";
         
@@ -74,7 +88,7 @@ public class CalculatorUtils {
      *         </ul>
      * @return The amount insured for this order
      */
-    public static int getInsuranceSum(final InsuranceProduct insuranceProduct, final int livingSpace) throws IllegalArgumentException  {
+    public double getInsuranceSum(final InsuranceProduct insuranceProduct, final int livingSpace) throws IllegalArgumentException  {
         Checks.notNull(insuranceProduct, "The insurance product");
         Checks.check(insuranceProduct != InsuranceProduct.UNKNOWN, "The given insurance product was unknown!");
         Checks.check(livingSpace >= 0, "The living space cannot be smaller than 0!");
