@@ -59,20 +59,20 @@ public enum InsuranceProduct {
     }
     
     /**
-     * Gets an {@link InsuranceProduct} by its name. If the is not such a product, it will return <code>null</code>.
+     * Gets an {@link InsuranceProduct} by its name. If there is not such a product, it will return {@link InsuranceProduct#UNKNOWN}.
      * The name comparison will be made case sensitive.
-     * @param  name Name of the insurance product to find.
-     * @return Possibly-null {@link InsuranceProduct} having the given name.
+     * @param  name Name of the insurance product to find
+     * @return Never-null {@link InsuranceProduct} having the given name or {@link InsuranceProduct#UNKNOWN} if the name doesn't match a product.
      */
     public static InsuranceProduct of(final String name)  {
         return of(name, false);
     }
     
     /**
-     * Gets an {@link InsuranceProduct} by its name. If the is not such a product, it will return <code>null</code>.
-     * @param  name       Name of the insurance product to find.
-     * @param  ignoreCase Whether the comparison is case insensitive or not
-     * @return Possibly-null {@link InsuranceProduct} having the given name.
+     * Gets an {@link InsuranceProduct} by its name. If there is not such a product, it will return {@link InsuranceProduct#UNKNOWN}.
+     * @param  name       Name of the insurance product to find
+     * @param  ignoreCase Whether the name comparison is case insensitive or case sensitive
+     * @return Never-null {@link InsuranceProduct} having the given name or {@link InsuranceProduct#UNKNOWN} if the name doesn't match a product.
      */
     public static InsuranceProduct of(final String name, final boolean ignoreCase)  {
         for (InsuranceProduct p : values())  {
